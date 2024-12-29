@@ -30,14 +30,19 @@ export default function Home() {
           keyboard shortcuts.
         </p>
         {fileUrl ? (
-          <Link href={fileUrl} target="_blank" download>
-            <AnimatedColorButton
-              colors={["#845ec2", "#1A8255", "#F25723"]}
-              duration={3}
-            >
-              Download
-            </AnimatedColorButton>
-          </Link>
+          <div className="flex flex-col gap-1">
+            <Link href={fileUrl} target="_blank" download>
+              <AnimatedColorButton
+                colors={["#845ec2", "#1A8255", "#F25723"]}
+                duration={3}
+              >
+                Download
+              </AnimatedColorButton>
+            </Link>
+            <small className="text-sm md:text-base text-gray-500">
+              Mac OS Sonoma or later.
+            </small>
+          </div>
         ) : (
           <p className="text-red-500">
             Whoops. Looks like the file has gone missing. Try the{" "}
